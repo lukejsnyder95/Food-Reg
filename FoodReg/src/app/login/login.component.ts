@@ -17,16 +17,16 @@ data = {uname:'',pwd:''}
   }
 
   userAuth(nf:NgForm){
-var t = this.con.userAuthenticate(nf.value)
-if(t.type === 'v'){
-    this.router.navigateByUrl('/volunteer');}
-    else if(t.type === 'c'){
-      this.router.navigateByUrl('/customer');}
-      else{
-        this.router.navigateByUrl('/error');
-      }
+// var t = this.con.userAuthenticate(nf.value)
+// if(t.type === 'v'){
+//     this.router.navigateByUrl('/volunteer');}
+//     else if(t.type === 'c'){
+//       this.router.navigateByUrl('/customer');}
+//       else{
+//         this.router.navigateByUrl('/error');
+//       }
 
 
-  }
+   }
 
 }
