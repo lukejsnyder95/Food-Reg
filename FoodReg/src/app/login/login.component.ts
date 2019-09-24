@@ -11,13 +11,21 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(public con:RegistrationServiceService, private router: Router) { }
 data = {uname:'',pwd:''}
   ngOnInit() {
   }
 
   userAuth(nf:NgForm){
-    this.router.navigateByUrl('/volunteer');
+var t = this.con.userAuthenticate(nf.value)
+if(t.type === 'v'){
+    this.router.navigateByUrl('/volunteer');}
+    else if(t.type === 'c'){
+      this.router.navigateByUrl('/customer');}
+      else{
+        this.router.navigateByUrl('/error');
+      }
+
 
   }
 
