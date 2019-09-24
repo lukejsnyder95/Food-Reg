@@ -1,12 +1,7 @@
 const express =  require('express')
 var bp = require('body-parser')
-var firebase =  require('firebase')
-
-var app = express()
-app.use(bp.json());
 var cors = require('cors');
-
-app.use(cors());
+var firebase =  require('firebase')
 
 var firebaseConfig = {
     apiKey: "AIzaSyDLTHO2THrb2eqCZdgAUDxY4X9DUEhV3ec",
@@ -21,34 +16,77 @@ var firebaseConfig = {
 
   var database = firebase.database()
 
+var app = express()
+app.use(bp.json());
+app.use(cors());
+// app.use((req,res,next)=>{
+// 	res.set('Access-Control-Allow-Origin', '*');
+//   res.set('Access-Control-Allow-Headers','content-type');
+//   res.set('Access-Control-Allow-Methods','GET, POST, DELETE');
+// });
+
+
+
+
+
+app.listen('8989', ()=>{
+    console.log('listen  8989')
+})
+
+
+
+
 
 app.post('/createProfile',(req,res)=>{
     body = req.body
-    database.ref('/user/'+body.username).set(body)
-    res.send('data saved')
-
+    console.log("hi")
+    database.ref('/user/'+body.fname).set(body)
+    res.status(200).send({message: 'data saved'})
 })
-app.put('/editProfile',(req,res)=>{
-    var collecion = database.ref('/user/')
 
-})
-app.get('/login',(req,res)=>{
-    console.log('Test')
-    body = req.body
-    res.send('test');
 
-    var query = firebase.database().ref("/user").query.once("value").then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-            console.log(childSnapshot.val())
-        })
+
+
+app.get('/loadProfile',(req,res)=>{
+//requests a username profile
+  var result = database.ref('user/').once("value").then(function(snapshot){
+    snapshot.forEach(function (childSnapshot){
+      if(req.body.fname == childSnapshot.val().fname){
+        console.log(childSnapshot.exportVal())
+        res.send(childSnapshot.exportVal())
+      }
     })
-    // res.send(database.ref('/user/' + body.email).once('value').then(function(result){
-       
-    //    var username = result.val().email
-    //    var password = result.val().password
-    // })
-    
+  })
+})   
+        
+app.put('/updateProfile',(req,res)=>{
+  //takes form input and updates the entire profile
+  username = req.body.fname
+  var result = database.ref('user/'+fname).update(req.body,err=>{
+    if(err){
+    console.log(err)
+    res.status(400).send('bad data sent')
+    }
+    else{
+      res.send('update Suscessful')
+    }
+  })   
+
 })
-app.listen(3000, ()=>{
-    console.log('listen')
+
+
+app.get('/login',(req,res)=>{
+    body = req.body
+    
+    var query = firebase.database().ref("/user").orderByKey()
+    query.once("value").then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            if (body.username === childSnapshot.val().username)
+                if (body.password === childSnapshot.val().password)
+                    res.send(body.type)
+        })
+
+        // User does not exist OR password is invalid
+        res.send("DNE")
+    })
 })

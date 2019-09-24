@@ -7,6 +7,7 @@ import {CreateProComponent} from './create-pro/create-pro.component'
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: CreateProComponent }
+  
 ];
 
 @NgModule({

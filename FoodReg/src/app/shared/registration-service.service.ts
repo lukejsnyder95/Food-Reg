@@ -8,8 +8,17 @@ export class RegistrationServiceService {
 
   constructor(private http:HttpClient) { }
 
-  createAccount(registration){
-    this.http.post('http://localhost:3000/createProfile',registration)
+  createAccount(data:any){
+    console.log('in service')
+    this.http.post('http://192.168.1.9:8989/createProfile',data)
+    .subscribe(record => console.log(record))
+    }
+
+    userAuthenticate(data:any){
+console.log('User Auth')
+
+
+
     }
 }
 
