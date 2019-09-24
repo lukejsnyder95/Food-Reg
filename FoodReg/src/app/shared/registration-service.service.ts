@@ -18,7 +18,7 @@ export class RegistrationServiceService {
 console.log('User Auth')
 console.log('in service')
     var type = this.http.post('http://localhost:8989/createLogin',data)
-    .subscribe(record => console.log(record))
+    //.subscribe(record => console.log(record))
 return type;
 
 
