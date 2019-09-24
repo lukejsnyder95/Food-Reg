@@ -36,6 +36,12 @@ app.get('/login',(req,res)=>{
     console.log('Test')
     body = req.body
     res.send('test');
+
+    var query = firebase.database().ref("/user").query.once("value").then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+            console.log(childSnapshot.val())
+        })
+    })
     // res.send(database.ref('/user/' + body.email).once('value').then(function(result){
        
     //    var username = result.val().email

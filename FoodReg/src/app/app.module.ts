@@ -14,7 +14,6 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VolunteerLandingComponent } from './volunteer-landing/volunteer-landing.component';
 import { CustomerLandingComponent } from './customer-landing/customer-landing.component';
-import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [

@@ -8,13 +8,11 @@
                   <div class="row">
                       <div class="col-lg-12">
                           <form (ngSubmit)="addItem(f)" #f=ngForm>
-                                <mat-form-field>
-                                        <mat-label>Cars</mat-label>
-                                        <select matNativeControl required>
-                                          <option value="v">Volunteer</option>
+                                        <select required name="type" [(ngModel)]="user.type" class="form-group">
+                                          <option default value="v">Volunteer</option>
                                           <option value="c">Customer</option>
                                         </select>
-                                      </mat-form-field>
+                                      
 
 
                                 <div class="form-group">
