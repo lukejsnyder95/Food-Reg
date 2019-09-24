@@ -11,11 +11,14 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 data = {uname:'',pwd:''}
   ngOnInit() {
   }
 
-  userAuth(nf:NgForm){}
+  userAuth(nf:NgForm){
+    this.router.navigateByUrl('/volunteer');
+
+  }
 
 }
