@@ -31,6 +31,7 @@ app.use(cors());
 
 app.listen('8989', ()=>{
     console.log('listen  8989')
+    console.log('test2')
 })
 
 
@@ -85,8 +86,10 @@ app.get('/login',(req,res)=>{
                 if (body.password === childSnapshot.val().password)
                     res.send(body.type)
         })
-
+        console.log("test")
+        console.log("test2")
         // User does not exist OR password is invalid
         res.send("DNE")
     })
 })
+
