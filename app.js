@@ -76,28 +76,16 @@ app.put('/updateProfile',(req,res)=>{
 })
 
 
-<<<<<<< HEAD
-app.get('/login',(req,res)=>{
-
-  console.log('here login')
-=======
 app.post('/login',(req,res)=>{
->>>>>>> 9bb5e0053b20d45ba9318f85dc9f5d7e1e9b95e9
     body = req.body
     
     var query = firebase.database().ref("/user").orderByKey()
     query.once("value").then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-<<<<<<< HEAD
-            if (body.uname === childSnapshot.val().email)
-                if (body.pwd === childSnapshot.val().password)
-                    res.send(body.type)
-=======
             if (body.email === childSnapshot.val().email)
                 if (body.password === childSnapshot.val().password)
                   // "V" for Volunteer, "C" for Customer
                   res.json({type: childSnapshot.val().type})
->>>>>>> 9bb5e0053b20d45ba9318f85dc9f5d7e1e9b95e9
         })
         res.json({type: "DNE"})
     })
