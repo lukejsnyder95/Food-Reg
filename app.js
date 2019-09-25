@@ -76,20 +76,18 @@ app.put('/updateProfile',(req,res)=>{
 })
 
 
-app.get('/login',(req,res)=>{
+app.post('/login',(req,res)=>{
     body = req.body
     
     var query = firebase.database().ref("/user").orderByKey()
     query.once("value").then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            if (body.uname === childSnapshot.val().username)
-                if (body.pwd === childSnapshot.val().password)
-                    res.send(body.type)
+            if (body.email === childSnapshot.val().email)
+                if (body.password === childSnapshot.val().password)
+                  // "V" for Volunteer, "C" for Customer
+                  res.json({type: childSnapshot.val().type})
         })
-        console.log("test")
-        console.log("test2")
-        // User does not exist OR password is invalid
-        res.send("DNE")
+        res.json({type: "DNE"})
     })
 })
 
