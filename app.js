@@ -41,7 +41,7 @@ app.listen('8989', ()=>{
 app.post('/createProfile',(req,res)=>{
     body = req.body
     console.log("hi")
-    database.ref('/user/'+body.email).set(body)
+    database.ref('/user/'+body.uname).set(body)
     res.status(200).send({message: 'data saved'})
 })
 
@@ -62,8 +62,8 @@ app.get('/loadProfile',(req,res)=>{
         
 app.put('/updateProfile',(req,res)=>{
   //takes form input and updates the entire profile
-  // username = req.body.fname
-  var result = database.ref('user/'+email).update(req.body,err=>{
+  username = req.body.fname
+  var result = database.ref('user/'+username).update(req.body,err=>{
     if(err){
     console.log(err)
     res.status(400).send('bad data sent')
