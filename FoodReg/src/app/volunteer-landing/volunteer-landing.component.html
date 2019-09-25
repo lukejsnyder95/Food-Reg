@@ -1,20 +1,19 @@
-<form action="action_page.php">
+<form (ngSubmit)="insertVolData(f)" #f=ngForm>
   <div class="container">
     <h2>Welcome Volunteer</h2>
   </div>
 
   <div class="container" style="background-color:white">
     <b>Please enter your household information</b>
-    <input type="text" placeholder="Name" name="name" required>
-    <input type="text" placeholder="Street" name="street" required>
-    <input type="text" placeholder="Zip Code" name="zipcode" required>
-    <input type="text" placeholder="Email address" name="email" required>
+    <input type="text" placeholder="Street" name="street" [(ngModel)]="data.street" required>
+    <input type="text" placeholder="Zip Code" name="zipcode" [(ngModel)]="data.zcode" required>
+    <input type="text" placeholder="Email address" name="email" [(ngModel)]="data.email" required>
     <label>
       <p>Please select your Subscription Package </p>
-        <input type="radio" name="food" value="Vegetarian" checked>Vegetarian<br>
-        <input type="radio" name="food" value="Meat">Meat<br>
-        <input type="radio" name="food" value="Vegan">Vegan<br>
-        <input type="radio" name="food" value="No Prefrence">No Prefrence<br>
+        <input type="radio" name="food" value="Vegetarian" [(ngModel)]="data.sel" checked>Vegetarian<br>
+        <input type="radio" name="food" value="Meat" [(ngModel)]="data.sel">Meat<br>
+        <input type="radio" name="food" value="Vegan" [(ngModel)]="data.sel">Vegan<br>
+        <input type="radio" name="food" value="No Prefrence" [(ngModel)]="data.sel">No Prefrence<br>
     </label>
   </div>
 

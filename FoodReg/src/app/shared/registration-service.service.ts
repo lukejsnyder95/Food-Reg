@@ -31,5 +31,12 @@ return this.http.post("http://localhost:8989/login",data)
 
 
     }
+
+    insertVolD(data:any){
+      this.http.patch('http://localhost:8989/updateProfile',data)
+      .subscribe(record => console.log(record))
+
+
+    }
 }
 
