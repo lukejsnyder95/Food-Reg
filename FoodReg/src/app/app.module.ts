@@ -14,6 +14,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VolunteerLandingComponent } from './volunteer-landing/volunteer-landing.component';
 import { CustomerLandingComponent } from './customer-landing/customer-landing.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CustomerLandingComponent } from './customer-landing/customer-landing.co
     IdentiyVerifyComponent,
     UpdateProfileComponent,
     VolunteerLandingComponent,
-    CustomerLandingComponent
+    CustomerLandingComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
