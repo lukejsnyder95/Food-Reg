@@ -31,6 +31,7 @@ app.use(cors());
 
 app.listen('8989', ()=>{
     console.log('listen  8989')
+    console.log('test2')
 })
 
 
@@ -81,15 +82,17 @@ app.get('/login',(req,res)=>{
     var query = firebase.database().ref("/user").orderByKey()
     query.once("value").then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            if (body.username === childSnapshot.val().username)
-                if (body.password === childSnapshot.val().password)
+            if (body.uname === childSnapshot.val().username)
+                if (body.pwd === childSnapshot.val().password)
                     res.send(body.type)
         })
-
+        console.log("test")
+        console.log("test2")
         // User does not exist OR password is invalid
         res.send("DNE")
     })
 })
+
 app.put('/changeSubscription',(req,res)=>{//takes unique identifier and suscriptionID to change
   body = req.body
   console.log(body)
@@ -132,3 +135,6 @@ app.put('/registerCarePackage',(req,res)=>{
   database.ref('package/'+body.name).set(body)
   res.status(201).send('data saved')
 })
+
+
+
