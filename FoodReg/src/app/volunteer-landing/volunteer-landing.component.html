@@ -1,71 +1,17 @@
-<form class="form-compact" action="">
-        <div class="row paddingBottom20">
-            <div class="container col-4">
-                <div class="row">
-                    <h6 class="text-center col-12 mb-0">Subscriptions</h6> 
-                    <sub class="text-right text-muted col-12"><a href="#" tabindex="-1"><i class="far fa-edit"></i></a></sub>
-                </div>
-                <div class="dropdown-divider mb-3"></div>
-                <font color=" #000000">
-                <div class="form-group row">
-                    <label for="firstName" >First Name:</label> 
-                    <div class="col-8">
-                        <div class="input-group"> 
-                            <input id="firstName" name="text" type="text" class="form-control form-control-sm" >
-                        </div>
-                    </div>
-                </div> 
-                <div class="form-group row align-items-center">
-                    <label for="lastName">Last Name:</label> 
-                    <div class="col-8">
-                      <div class="input-group"> 
-                        <input id="lastName" name="text" type="text" class="form-control form-control-sm" >
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group row align-items-center">
-                    <label for="position" >Subscriptions:</label> 
-                    <div class="col-8">
-                      <div class="input-group"> 
-                        <select id="position" class="form-control" >
-                            <option></option>
-                            <option>Vegitarian</option>
-                            <option>Meat Lovers</option>
-                            <option>Vegan</option>
-                        </select>
-                        <br>
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group row align-items-center">
-                    <label for="emailAddress" >Email Address:</label> 
-                    <div class="col-8">
-                      <div class="input-group"> 
-                        <input id="emailAddress" name="text" type="email" class="form-control form-control-sm extendable">
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group row align-items-center">
-                  <br>
+<form action="action_page.php">
+  <div class="container">
+    <h2>Welcome Volunteer</h2>
+  </div>
 
-                    <label for="office" >Office:</label> 
-                    <div class="col-8">
-                      <div class="input-group">
-                        <input id="office" name="text" type="number" class="form-control form-control-sm" >
-                        <br>
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group row align-items-center">
-                    <label for="cell" >Cell:</label> 
-                    <div class="col-8">
-                      <div class="input-group">
-                        <input id="cell" name="text" type="number" class="form-control form-control-sm" >
-                        <br>
-                      </div>
-                    </div>
-                </div>
-              </font>
-            </div>
-        </div>
-    </form>
+  <div class="container" style="background-color:white">
+    <input type="text" placeholder="Name" name="name" required>
+    <input type="text" placeholder="Email address" name="mail" required>
+    <label>
+      
+    </label>
+  </div>
+
+  <div class="container">
+    <input type="submit" value="Subscribe">
+  </div>
+</form>
