@@ -22,12 +22,15 @@ form {
  
   
   /* Style the submit button */
+  .btn-register:hover,
   input[type=submit] {
-    background-color: #4CAF50;
+    background-color: #59B2E0;
     color: white;
     border: none;
+
   }
   
   input[type=submit]:hover {
-    opacity: 0.8;
+    opacity: 1;
+    background-color: #1CA347;
   }
