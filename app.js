@@ -82,8 +82,8 @@ app.post('/login',(req,res)=>{
     var query = firebase.database().ref("/user").orderByKey()
     query.once("value").then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            if (body.email === childSnapshot.val().email)
-                if (body.password === childSnapshot.val().password)
+            if (body.uname === childSnapshot.val().email)
+                if (body.pwd === childSnapshot.val().password)
                   // "V" for Volunteer, "C" for Customer
                   res.json({type: childSnapshot.val().type})
         })
