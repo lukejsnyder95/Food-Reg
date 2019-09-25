@@ -62,7 +62,7 @@ app.get('/loadProfile',(req,res)=>{
         
 app.put('/updateProfile',(req,res)=>{
   //takes form input and updates the entire profile
-  username = req.body.fname
+  username = req.body.email
   var result = database.ref('user/'+username).update(req.body,err=>{
     if(err){
     console.log(err)

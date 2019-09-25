@@ -8,8 +8,9 @@
                   <div class="row">
                       <div class="col-lg-12">
                           <form (ngSubmit)="createUser(f)" #f=ngForm>
+                                <p>Please choose to be a Volunteer or Customer</p>
                                         <select required name="type" [(ngModel)]="user.type" class="form-group">
-                                         <p>Please choose to be a Volunteer or Customer</p>
+                                         
                                           <option default value="v">Volunteer</option>
                                           <option value="c">Customer</option>
                                         </select>
