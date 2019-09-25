@@ -21,7 +21,7 @@ console.log('User Auth')
 console.log('in service')
 
 
-return this.http.get("http://localhost:8989/login",data)
+return this.http.post("http://localhost:8989/login",data)
         .pipe(map(responseData => {
             var type;
             type = responseData;

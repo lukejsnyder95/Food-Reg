@@ -31,13 +31,13 @@ this.con.userAuthenticate(nf.value).subscribe(
     this.t=posts}
 )
 console.log(this.t)
-// if(t.type === "v"){
-//     this.router.navigateByUrl('/volunteer');}
-//     else if(t.type === "c"){
-//         this.router.navigateByUrl('/customer');}
-//       else{
-//         this.router.navigateByUrl('/error');
-//       }
+if(this.t.type === "v"){
+    this.router.navigateByUrl('/volunteer');}
+    else if(this.t.type === "c"){
+        this.router.navigateByUrl('/customer');}
+      else{
+        this.router.navigateByUrl('/error');
+      }
 
 
     }

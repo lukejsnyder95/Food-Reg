@@ -77,6 +77,7 @@ app.put('/updateProfile',(req,res)=>{
 
 
 app.post('/login',(req,res)=>{
+    console.log("Test")
     body = req.body
     
     var query = firebase.database().ref("/user").orderByKey()
