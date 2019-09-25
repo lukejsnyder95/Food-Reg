@@ -77,12 +77,14 @@ app.put('/updateProfile',(req,res)=>{
 
 
 app.get('/login',(req,res)=>{
+
+  console.log('here login')
     body = req.body
     
     var query = firebase.database().ref("/user").orderByKey()
     query.once("value").then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            if (body.uname === childSnapshot.val().username)
+            if (body.uname === childSnapshot.val().email)
                 if (body.pwd === childSnapshot.val().password)
                     res.send(body.type)
         })
