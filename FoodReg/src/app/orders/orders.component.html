@@ -5,20 +5,19 @@
 
     <div class="container" style="background-color:white">
         <ul class="list-group">
-            <li class="list-group-item">sub 1</li>
-            <li class="list-group-item">sub 2</li>
+            <li *ngFor='let user of users' class="list-group-item">{{user.fname}}</li>
         </ul>
 
         <div style="text-align:center"><h3>Customer Info</h3></div><br>
         <div class="container" style="display:inline-block" width=300px>
-        <b>First Name:<br>
-        Last Name:<br>
-        Address:<br>
+        <b>First Name:</b> Christina<br>
+        <b>Last Name:</b> Edmunds<br>
+        <b>Address:</b> 100 Happy Ln, Cincinnati, OH, 45205<br>
         <br>
-        Active Subscription:<br>
-        Status:</b><br>
+        <b>Active Subscription:</b> Vegetarian<br>
+        <b>Status:</b> New<br>
         </div>
 
-        <input type="button" value="Complete Order"/>
+        <input type="submit" value="Complete Order" cclass="form-control btn btn-login"/>
     </div>
 </form>

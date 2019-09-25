@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
+  users = [{fname: 'Christina'},
+          {fname: 'Luke'},
+          {fname: 'Harsh'},
+          {fname: 'Levi'}]
   constructor() { }
 
   ngOnInit() {
